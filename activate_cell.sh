@@ -24,6 +24,7 @@ function connect_lte()
             sudo mv /home/deck/steam_deck_cellular/deps/lembas-chat-disconnect /etc/ppp/peers
             sudo mv /home/deck/steam_deck_cellular/deps/lembas-ppp /etc/ppp/peers
             sudo rm -r /home/deck/steam_deck_cellular/deps
+            sudo mv /home/deck/steam_deck_cellular/LTE.desktop ~/.local/share/applications
             sleep 1
             # Now connecting...
             sudo pppd call lembas-ppp & PID_PPPD=$!

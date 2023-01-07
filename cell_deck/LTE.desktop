@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=lembas_on_deck
-Exec=/bin/bash -c "/home/deck/cell_deck/activate.sh"
-Icon=/home/deck/cell_deck/lte_icon.png
-Terminal=false

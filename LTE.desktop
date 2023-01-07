@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
 Name=lembas_on_deck
-Exec=/bin/bash -c "/home/deck/steam_deck_cellular/activate.sh & disown"
+Exec=/bin/bash -c "/home/deck/steam_deck_cellular/activate.sh"
 Icon=/home/deck/steam_deck_cellular/lte_icon.png
 Terminal=false

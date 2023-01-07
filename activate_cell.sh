@@ -23,6 +23,8 @@ function connect_lte()
             sudo mv /home/deck/steam_deck_cellular/deps/lembas-chat-connect /etc/ppp/peers
             sudo mv /home/deck/steam_deck_cellular/deps/lembas-chat-disconnect /etc/ppp/peers
             sudo mv /home/deck/steam_deck_cellular/deps/lembas-ppp /etc/ppp/peers
+            sudo rm -r /home/deck/steam_deck_cellular/deps
+            sleep 1
             # Now connecting...
             sudo pppd call lembas-ppp & PID_PPPD=$!
             sleep 10
@@ -35,6 +37,13 @@ function connect_lte()
 }
 
 while true; do
-    connect_lte
+    ip address show ppp0
+    if [ $? = 0 ]
+    then
+        echo "LEMBAS is currently operational..."
+    else
+        echo "LEMBAS is currently not operational..."
+        connect_lte
+    fi
     sleep 1
 done

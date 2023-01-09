@@ -7,8 +7,6 @@ function connect_lte()
     then
         echo "LEMBAS connected!"
         sleep 1
-        echo "%wheel ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/wheel >/dev/null
-        sleep 1
         sudo ls /etc/ppp/peers/lembas-ppp
         if [ $? = 0 ]
         then
@@ -34,8 +32,6 @@ function connect_lte()
     else
         echo "LEMBAS not connected..."
     fi
-
-    echo "%wheel ALL=(ALL) PASSWD:ALL" | sudo tee /etc/sudoers.d/wheel >/dev/null
 }
 
 function reboot()

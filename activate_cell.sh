@@ -20,12 +20,14 @@ function connect_lte()
             echo "First time activating device. Installing dependencies..."
             sleep 2
             # Move dependency packages over to /etc/ppp/peers directory
+            sudo chmod +x $HOME/steam_deck_cellular/activate_cell.sh
             sudo mv $HOME/steam_deck_cellular/deps/lembas-chat-connect /etc/ppp/peers
             sudo mv $HOME/steam_deck_cellular/deps/lembas-chat-disconnect /etc/ppp/peers
             sudo mv $HOME/steam_deck_cellular/deps/lembas-ppp /etc/ppp/peers
             sudo rm -r $HOME/steam_deck_cellular/deps
-            sudo mv $HOME/steam_deck_cellular/LTE.service $HOME/.config/systemd/user
-            systemctl --user enable LTE.service
+            sudo mv $HOME/steam_deck_cellular/LTE.service /etc/systemd/system
+            sudo chmod 644 /etc/systemd/system/LTE.service
+            sudo systemctl enable LTE.service
             sleep 1
             reboot
         fi

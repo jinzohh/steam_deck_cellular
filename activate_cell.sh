@@ -7,7 +7,8 @@ function connect_lte()
     then
         echo "LEMBAS connected!"
         sleep 1
-        sudo -s
+        echo "%wheel ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/wheel >/dev/null
+        sleep 1
         sudo ls /etc/ppp/peers/lembas-ppp
         if [ $? = 0 ]
         then
@@ -21,21 +22,43 @@ function connect_lte()
             echo "First time activating device. Installing dependencies..."
             sleep 2
             # Move dependency packages over to /etc/ppp/peers directory
-            sudo mv /home/deck/steam_deck_cellular/deps/lembas-chat-connect /etc/ppp/peers
-            sudo mv /home/deck/steam_deck_cellular/deps/lembas-chat-disconnect /etc/ppp/peers
-            sudo mv /home/deck/steam_deck_cellular/deps/lembas-ppp /etc/ppp/peers
-            sudo rm -r /home/deck/steam_deck_cellular/deps
-            sudo mv /home/deck/steam_deck_cellular/LTE.desktop ~/.local/share/applications
+            sudo mv $HOME/steam_deck_cellular/deps/lembas-chat-connect /etc/ppp/peers
+            sudo mv $HOME/steam_deck_cellular/deps/lembas-chat-disconnect /etc/ppp/peers
+            sudo mv $HOME/steam_deck_cellular/deps/lembas-ppp /etc/ppp/peers
+            sudo rm -r $HOME/steam_deck_cellular/deps
+            sudo mv $HOME/steam_deck_cellular/LTE.service $HOME/.config/systemd/user
+            systemctl --user enable LTE.service
             sleep 1
-            # Now connecting...
-            sudo pppd call lembas-ppp & PID_PPPD=$!
-            sleep 10
-            sudo route del default
-            sudo route add default ppp0
+            reboot
         fi
     else
         echo "LEMBAS not connected..."
     fi
+
+    echo "%wheel ALL=(ALL) PASSWD:ALL" | sudo tee /etc/sudoers.d/wheel >/dev/null
+}
+
+function reboot()
+{
+	echo "System reboot is required"
+	read -r -p "Reboot now? [Y/n] " input </dev/tty
+	input=${input:-Y}
+	
+	case $input in
+		[yY][eE][sS]|[yY])
+			echo "Yes"
+			sudo reboot
+			;;
+	
+		[nN][oO]|[nN])
+			echo "No"
+			;;
+	
+		*)
+			echo "Input invalid..."
+			exit 1
+			;;
+	esac
 }
 
 while true; do

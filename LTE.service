@@ -1,0 +1,9 @@
+[Unit]
+Description=LEMBAS Service
+
+[Service]
+TimeoutStopSec=30
+ExecStart=/bin/bash /home/deck/steam_deck_cellular/activate_cell.sh
+
+[Install]
+WantedBy=multi-user.target

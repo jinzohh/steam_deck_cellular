@@ -7,6 +7,7 @@ function connect_lte()
     then
         echo "LEMBAS connected!"
         sleep 1
+        sudo -s
         sudo ls /etc/ppp/peers/lembas-ppp
         if [ $? = 0 ]
         then

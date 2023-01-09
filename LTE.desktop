@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
 Name=LEMBAS LTE
-Exec=/bin/bash /home/deck/steam_deck_cellular/activate_cell.sh
+Exec=/bin/bash -c "/home/deck/steam_deck_cellular/activate_cell.sh"
 Icon=/home/deck/steam_deck_cellular/lte_icon.png
 Terminal=true

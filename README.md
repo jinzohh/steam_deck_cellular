@@ -4,7 +4,7 @@ This is a guide on how to enable 4G/LTE high speed internet on Steam Deck using 
 1. Digi-Key: https://www.digikey.com/en/products/detail/te-connectivity-amp-connectors/2195873-1/16615625?s=N4IgTCBcDaIDYFMC2AjAhgZxAXQL5A
 2. Mouser: https://www.mouser.com/ProductDetail/TE-Connectivity/2195873-1?qs=4ASt3YYao0XBsly1%252BNgWoQ%3D%3D
 
-Data Plan Set-up:
+Data Plan Set-up:  
 The steps to purchase data plan is the same as indicated on the instructions manual when you purchase the product.
 1. Go to https://lembas.luner.io.
 2. Create an account or log in.

@@ -16,10 +16,8 @@ The steps to purchase data plan is the same as indicated on the instructions man
 Device Set-up:
 1. Press on STEAM buttom on bottom left of console, then "Power", then "Switch to Desktop".
 2. Make sure you are connected to WiFi.
-3. Open Konsole.\n
-    a. if you cannot find it, click on Application Launcher at the bottom left corner of the screen (Start button equivalent on Windows), and type "Konsole" in the search bar.
-4. Clone the git repository by entering "git clone https://github.com/jins567/steam_deck_cellular.git".
-    a. Make sure to be in the "/home/deck" directory which is the default directory when you open Konsole.\n
+3. Open Konsole. If you cannot find it, click on Application Launcher at the bottom left corner of the screen (Start button equivalent on Windows), and type "Konsole" in the search bar.
+4. Clone the git repository by entering "git clone https://github.com/jins567/steam_deck_cellular.git". Make sure to be in the "/home/deck" directory which is the default directory when you open Konsole.
 5. Disable WiFi (bottom right corner of screen and uncheck the WiFi icon).
 6. Change directory into "steam_deck_cellular" by entering "cd steam_deck_cellular".
 7. Finally, enter "bash activate_cell.sh", and then reboot the system when prompted to do so.

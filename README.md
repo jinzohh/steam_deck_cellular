@@ -1,3 +1,5 @@
+Check out full instructions on Instructables at https://www.instructables.com/Making-Steam-Deck-Completely-Mobile-With-Cellular-/.
+
 Installing LEMBAS on Steam Deck:
 
 This is a guide on how to enable 4G/LTE high speed internet on Steam Deck using TE's LEMBAS USB Modem. You can purchase this from Digi-Key or Mouser.

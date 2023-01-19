@@ -19,7 +19,7 @@ Device Set-up:
 1. Press on STEAM buttom on bottom left of console, then "Power", then "Switch to Desktop".
 2. Make sure you are connected to WiFi.
 3. Open Konsole. If you cannot find it, click on Application Launcher at the bottom left corner of the screen (Start button equivalent on Windows), and type "Konsole" in the search bar.
-4. Clone the git repository by entering <code>git clone https://github.com/jins567/steam_deck_cellular.git</code>.  
+4. Clone the git repository by entering <code>git clone https://github.com/jinzohh/steam_deck_cellular.git</code>.  
    Make sure to be in the "/home/deck" directory which is the default directory when you open Konsole.
 5. Disable WiFi (bottom right corner of screen and uncheck the WiFi icon).
 6. Connect the LEMBAS to the USB-C port of the Steam Deck using an adapter (USB-A to USB-C) or to a dock if you have one.
